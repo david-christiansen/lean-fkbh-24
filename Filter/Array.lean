@@ -1,4 +1,4 @@
-namespace Bob.Array
+namespace Filter.Array
 
 /-
 This implementation of `filter` shows a few interesting aspects of Lean:
