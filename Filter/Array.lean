@@ -1,4 +1,4 @@
-namespace Bob.Array
+namespace Filter.Array
 
 def filter1 (p : α → Prop) [DecidablePred p] (arr : Array α) : Array α := Id.run do
   let mut out := #[]
