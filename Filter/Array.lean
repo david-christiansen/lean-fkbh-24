@@ -25,6 +25,7 @@ def All (p : α → Prop) (arr : Array α) : Prop :=
 theorem all_empty (p : α → Prop) : All p #[] := fun i lt =>
   by contradiction
 
+@[simp]
 theorem push_all (hAll : All p xs) (hx : p x) : All p (xs.push x) := by
   intros
   intro i lt
@@ -50,6 +51,14 @@ theorem filter_go_all [DecidablePred p] (hAcc : All p acc)
   · assumption
 termination_by xs.size - i
 
+/-
+This alternative solution uses induction on the call graph of filter.go,
+rather than by directly emulating it with recursion. This enables a much
+higher degree of automation.
+-/
+theorem filter_go_all' [DecidablePred p] (hAcc : All p acc)
+    : All p (filter.go p xs i acc) := by
+  induction i, acc using filter.go.induct p xs <;> unfold filter.go <;> simp [*]
 
 theorem filter_all (p : α → Prop) [DecidablePred p] : All p (filter p xs) := by
   simp [filter, filter_go_all]
