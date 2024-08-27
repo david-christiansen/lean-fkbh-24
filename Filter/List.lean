@@ -1,6 +1,6 @@
 import Lean
 
-namespace Bob.List
+namespace Filter.List
 
 -- `DecidablePred p` means that we can use `if` to check whether a value satisfies `p`
 -- Example : if p x then ... else ...

@@ -1,9 +1,9 @@
 -- This program uses the compiler's JSON library
 import Lean.Data.Json
-import Bob.List
-import Bob.Array
+import Filter.List
+import Filter.Array
 
-namespace Bob
+namespace Filter
 
 open Lean (Json FromJson ToJson)
 
