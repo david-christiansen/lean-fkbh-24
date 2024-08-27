@@ -5,9 +5,9 @@ open Lake DSL
 package bob where
   -- add package configuration options here
 
-lean_lib Bob where
+lean_lib Filter where
   -- add library configuration options here
 
 @[default_target]
-lean_exe bobfilter where
+lean_exe jsonfilter where
   root := `Main
