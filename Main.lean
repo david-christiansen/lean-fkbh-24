@@ -1,8 +1,8 @@
 import Lean
-import Bob
+import Filter
 
 open Lean (Json)
-open Bob
+open Filter
 
 def main : List String → IO UInt32
   | [q] => do
@@ -14,9 +14,9 @@ def main : List String → IO UInt32
     match readJsonArray input with
     | .error e => IO.eprintln e; return 3
     | .ok vals =>
-      for v in Bob.Array.filter (query.matches · = true) vals do
+      for v in Filter.Array.filter (query.matches · = true) vals do
         IO.println v
       return 0
   | _ => do
-    IO.println "Usage: bobfilter QUERY"
+    IO.println "Usage: jsonfilter QUERY"
     return 2
