@@ -1,6 +1,6 @@
 import Lean
 
-namespace Bob
+namespace Filter
 
 open Lean (Json Parsec)
 open Lean.Parsec
