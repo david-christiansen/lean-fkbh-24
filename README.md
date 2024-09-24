@@ -5,6 +5,8 @@ Programmer", a tutorial presented at *Mødegruppen for F#unktionelle
 Københavnere* by David Thrane Christiansen on 2024-08-27 and
 2024-09-24.
 
+The code from the second presentation is available [in another
+repository](https://github.com/david-christiansen/lean-fkbh-24-2).
 
 ## Overview
 
